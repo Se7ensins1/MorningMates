@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,12 +6,15 @@ import {
   View
 } from 'react-native';
 
+//var MyScene = require('./MyScene')
+import MyScene from './pages/MyScene';
+
 export default class morningmates extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Natve!
+          Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
