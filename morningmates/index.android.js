@@ -26,7 +26,7 @@ export default class morningmates extends Component {
         type="static"
         content={<ScrollView style={styles.container}>
                   <Text style={styles.controlText}>
-                    Control Panel
+                    Menu
                   </Text>
                   <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
                     <Text>
@@ -34,7 +34,7 @@ export default class morningmates extends Component {
                     </Text>
                   </TouchableOpacity>
                  </ScrollView>}
-        openDrawerOffset={100}
+        openDrawerOffset={150}
         tweenHandler={Drawer.tweenPresets.parallax}
         >
         <Navigator
