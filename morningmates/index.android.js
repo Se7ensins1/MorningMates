@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import MyScene from './pages/MyScene';
+import EventDetails from './pages/EventDetails';
 import Drawer from 'react-native-drawer';
 import ControlPanel from 'react-native-drawer';
 
@@ -33,15 +33,30 @@ export default class morningmates extends Component {
                       Close Drawer
                     </Text>
                   </TouchableOpacity>
+                  <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
+                    <Text>
+                      Close Drawer
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
+                    <Text>
+                      Settings
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
+                    <Text>
+                      Log Out
+                    </Text>
+                  </TouchableOpacity>
                  </ScrollView>}
-        openDrawerOffset={150}
+        openDrawerOffset={100}
         tweenHandler={Drawer.tweenPresets.parallax}
         >
         <Navigator
         configureScene={() => ({...Navigator.SceneConfigs.PushFromRight, gestures: {}})}
           initialRoute={{ title: 'My Initial Scene', index: 0 }}
           renderScene={(route, navigator) =>
-            <MyScene
+            <EventDetails
               title={route.title}
 
               // Function to call when a new scene should be displayed

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 
-export default class MyScene extends Component {
+export default class EventDetails extends Component {
   render() {
     return (
       <View style = {style.container}>
@@ -42,7 +42,7 @@ const style = StyleSheet.create({
   }
 })
 
-MyScene.propTypes = {
+EventDetails.propTypes = {
   title: PropTypes.string.isRequired,
   onForward: PropTypes.func.isRequired,
   onBack: PropTypes.func.isRequired,
