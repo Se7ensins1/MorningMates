@@ -4,13 +4,14 @@ import {
   StyleSheet,
   Text,
   View,
-  Navigator
+  Navigator,
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
 
-//var MyScene = require('./MyScene')
 import MyScene from './pages/MyScene';
-import Drawer from './node_modules/react-native-drawer';
-import ControlPanel from './node_modules/react-native-drawer';
+import Drawer from 'react-native-drawer';
+import ControlPanel from 'react-native-drawer';
 
 export default class morningmates extends Component {
   closeControlPanel = () => {
@@ -23,12 +24,17 @@ export default class morningmates extends Component {
     return (
       <Drawer
         type="static"
-        content={<ControlPanel />}
+        content={      <ScrollView style={styles.container}>
+                         <Text style={styles.controlText}>Control Panel</Text>
+                         <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
+                           <Text>Close Drawer</Text>
+                         </TouchableOpacity>
+                       </ScrollView>}
         openDrawerOffset={100}
-        styles={drawerStyles}
         tweenHandler={Drawer.tweenPresets.parallax}
         >
         <Navigator
+        pointerEvents="none"
           initialRoute={{ title: 'My Initial Scene', index: 0 }}
           renderScene={(route, navigator) =>
             <MyScene
@@ -57,9 +63,26 @@ export default class morningmates extends Component {
   }
 }
 
-const drawerStyles = {
+const drawerStyles = StyleSheet.create({
   drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
-  main: {paddingLeft: 3},
-}
+  main: {paddingLeft: 3}
+  })
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: 'black',
+  },
+  controlText: {
+    color: 'white',
+  },
+  button: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 10,
+  }
+})
 
 AppRegistry.registerComponent('morningmates', () => morningmates);
