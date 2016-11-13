@@ -21,16 +21,19 @@ export default class morningmates extends Component {
     this._drawer.open();
   };
   render() {
-
     return (
       <Drawer
         type="static"
-        content={      <ScrollView style={styles.container}>
-                         <Text style={styles.controlText}>Control Panel</Text>
-                         <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
-                           <Text>Close Drawer</Text>
-                         </TouchableOpacity>
-                       </ScrollView>}
+        content={<ScrollView style={styles.container}>
+                  <Text style={styles.controlText}>
+                    Control Panel
+                  </Text>
+                  <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
+                    <Text>
+                      Close Drawer
+                    </Text>
+                  </TouchableOpacity>
+                 </ScrollView>}
         openDrawerOffset={100}
         tweenHandler={Drawer.tweenPresets.parallax}
         >
