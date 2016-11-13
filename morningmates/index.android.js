@@ -21,6 +21,7 @@ export default class morningmates extends Component {
     this._drawer.open();
   };
   render() {
+
     return (
       <Drawer
         type="static"
@@ -34,7 +35,7 @@ export default class morningmates extends Component {
         tweenHandler={Drawer.tweenPresets.parallax}
         >
         <Navigator
-        pointerEvents="none"
+        configureScene={() => ({...Navigator.SceneConfigs.PushFromRight, gestures: {}})}
           initialRoute={{ title: 'My Initial Scene', index: 0 }}
           renderScene={(route, navigator) =>
             <MyScene
