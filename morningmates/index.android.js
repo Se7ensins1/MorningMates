@@ -25,7 +25,7 @@ export default class morningmates extends Component {
       <Drawer
         type="static"
         content={<ScrollView style={styles.container}>
-                  <Text style={styles.controlText}>
+                  <Text style={styles.menuText}>
                     Menu
                   </Text>
                   <TouchableOpacity style={styles.button} onPress={this.closeControlPanel}>
@@ -78,8 +78,10 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: 'black',
   },
-  controlText: {
+  menuText: {
     color: 'white',
+    fontSize: 20,
+    textAlign: 'center',
   },
   button: {
     backgroundColor: 'white',
